@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Millano | Beleza e Bem-Estar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Playfair Display & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bege: {
+                            50: '#FAF8F5',
+                            100: '#F5F2EB',
+                            200: '#E8DFD1',
+                            300: '#D0C2B0',
+                            400: '#B8A690',
+                        },
+                        verde: {
+                            light: '#91C9C7',
+                            DEFAULT: '#4E9F9D',
+                            soft: '#76B9B7',
+                            dark: '#2C6B69',
+                            deep: '#1D4948',
+                        },
+                        marrom: {
+                            light: '#8C7A6B',
+                            DEFAULT: '#4A3E3D',
+                            dark: '#2D2322'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(245, 242, 235, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(232, 223, 209, 0.6);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #2C6B69 0%, #4E9F9D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-bege-50 text-marrom-dark font-sans antialiased selection:bg-verde-soft selection:text-white">
+
+    <!-- Header / Navegação -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-bege-100/90 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-bege-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-full bg-verde text-white flex items-center justify-center text-xl font-serif font-bold shadow-md group-hover:bg-verde-dark transition-colors">
+                        M
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-tight text-marrom-dark group-hover:text-verde transition-colors">Estética Millano</span>
+                        <span class="text-[10px] tracking-widest text-verde-dark uppercase font-semibold">Facial & Corporal</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-marrom hover:text-verde font-medium transition-colors text-sm uppercase tracking-wider py-1">Início</a>
+                    <a href="#sobre" class="text-marrom hover:text-verde font-medium transition-colors text-sm uppercase tracking-wider py-1">Sobre Nós</a>
+                    <a href="#servicos" class="text-marrom hover:text-verde font-medium transition-colors text-sm uppercase tracking-wider py-1">Serviços</a>
+                    <a href="#avaliacoes" class="text-marrom hover:text-verde font-medium transition-colors text-sm uppercase tracking-wider py-1">Avaliações</a>
+                    <a href="#agendamento" class="text-marrom hover:text-verde font-medium transition-colors text-sm uppercase tracking-wider py-1">Agendamento</a>
+                </nav>
+
+                <!-- CTA Header -->
+                <div class="hidden md:flex items-center">
+                    <a href="#agendamento" class="bg-verde hover:bg-verde-dark text-white font-medium px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-sm flex items-center gap-2">
+                        <i class="fa-regular font-bold fa-calendar-check"></i> Agendar Horário
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-marrom hover:text-verde focus:outline-none p-2" aria-label="Abrir Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bege-100 border-b border-bege-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 text-base font-medium text-marrom hover:text-verde hover:bg-bege-200/50 rounded-lg">Início</a>
+            <a href="#sobre" class="mobile-nav-link block px-3 py-2 text-base font-medium text-marrom hover:text-verde hover:bg-bege-200/50 rounded-lg">Sobre Nós</a>
+            <a href="#servicos" class="mobile-nav-link block px-3 py-2 text-base font-medium text-marrom hover:text-verde hover:bg-bege-200/50 rounded-lg">Serviços</a>
+            <a href="#avaliacoes" class="mobile-nav-link block px-3 py-2 text-base font-medium text-marrom hover:text-verde hover:bg-bege-200/50 rounded-lg">Avaliações</a>
+            <a href="#agendamento" class="mobile-nav-link block px-3 py-2 text-base font-medium text-marrom hover:text-verde hover:bg-bege-200/50 rounded-lg">Agendamento</a>
+            <a href="#agendamento" class="mobile-nav-link text-center block w-full bg-verde text-white font-medium px-4 py-3 rounded-xl shadow mt-4">Agendar Agora</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="home" class="pt-28 lg:pt-36 pb-16 md:pb-24 bg-gradient-to-b from-bege-100 via-bege-50 to-white relative overflow-hidden">
+        <!-- SVG Decorative Elements -->
+        <div class="absolute top-10 right-0 -mr-20 opacity-20 pointer-events-none">
+            <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#4E9F9D" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,72.6,41.2C63.8,53.2,51.8,62.6,38.3,69.5C24.8,76.4,9.8,80.8,-4.6,88.7C-19,96.7,-32.8,108.2,-44.6,102.8C-56.4,97.4,-66.2,75.1,-73.4,60.8C-80.6,46.5,-85.2,30.2,-86.7,14.1C-88.2,-2,-86.6,-17.9,-80.1,-31.8C-73.6,-45.7,-62.2,-57.6,-48.9,-65.2C-35.6,-72.8,-20.4,-76.1,-3.9,-70.1C12.6,-64.1,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-verde/10 text-verde-dark text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-sparkles"></i> Excelência em Estética Digital
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-marrom-dark leading-tight">
+                        Estética Millano <br/>
+                        <span class="text-gradient">Sua beleza e bem-estar em harmonia</span>
+                    </h1>
+                    <p class="text-marrom/80 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Procedimentos faciais e corporais personalizados para realçar sua autoestima com segurança, transparência e profissionalismo.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#agendamento" class="bg-verde hover:bg-verde-dark text-white font-medium px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center flex items-center justify-center gap-2 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Agendar Consulta
+                        </a>
+                        <a href="#servicos" class="bg-bege-200/60 hover:bg-bege-200 text-marrom-dark font-medium px-8 py-4 rounded-full transition-all duration-300 text-center border border-bege-300 text-base">
+                            Conhecer Procedimentos
+                        </a>
+                    </div>
+                    
+                    <!-- Stats/Highlights -->
+                    <div class="pt-8 border-t border-bege-200 grid grid-cols-3 gap-4 text-center lg:text-left max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-verde-dark">100%</p>
+                            <p class="text-xs text-marrom/70 uppercase tracking-wider mt-1">Atendimento Personalizado</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-verde-dark">4.9 ★</p>
+                            <p class="text-xs text-marrom/70 uppercase tracking-wider mt-1">Avaliação dos Clientes</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-verde-dark">Facial/Corp</p>
+                            <p class="text-xs text-marrom/70 uppercase tracking-wider mt-1">Tratamentos Completos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Hero Image Frame -->
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-bege-200 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Tratamento Estético Facial Millano" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x750/E8DFD1/2C6B69?text=Estetica+Millano';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-marrom-dark/40 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white p-4 rounded-2xl glass-card border border-white/30 text-marrom-dark">
+                                <p class="text-xs font-bold uppercase tracking-wider text-verde-dark">Destaque da Semana</p>
+                                <p class="font-serif font-bold text-lg text-marrom-dark">Limpeza de Pele Profunda com Hidratação</p>
+                            </div>
+                        </div>
+                        <!-- Background Decorative Card -->
+                        <div class="absolute -bottom-6 -right-6 w-full h-full bg-verde-soft/30 rounded-3xl -z-10 transform rotate-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Visual / Image Grid -->
+                <div class="relative order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1512290900673-7002fe5dc899?auto=format&fit=crop&w=500&q=80" 
+                             alt="Ambiente Estética Millano" 
+                             class="rounded-2xl shadow-md h-64 w-full object-cover transform translate-y-4"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/F5F2EB/2C6B69?text=Clinica+Millano';">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" 
+                             alt="Procedimento Corporal Estética Millano" 
+                             class="rounded-2xl shadow-md h-64 w-full object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/E8DFD1/2C6B69?text=Cuidados';">
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-bege-100 p-6 rounded-2xl shadow-xl border border-bege-300 text-center max-w-xs">
+                        <i class="fa-solid fa-heart-pulse text-verde text-3xl mb-2"></i>
+                        <h4 class="font-serif font-bold text-marrom-dark">Transparência & Confiança</h4>
+                        <p class="text-xs text-marrom/70 mt-1">Comunicação clara para os melhores resultados.</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bege-200 text-marrom text-xs font-semibold uppercase tracking-wider">
+                        Sobre a Estética Millano
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-marrom-dark">
+                        Sua clínica de excelência em estética facial e corporal
+                    </h2>
+                    <p class="text-marrom/80 leading-relaxed">
+                        A <strong>Estética Millano</strong> nasce do compromisso de proporcionar tratamentos estéticos acessíveis, seguros e guiados por informações claras e confiáveis. Entendemos que cuidar da pele e do corpo vai além da estética: é um ato de saúde, autoestima e bem-estar.
+                    </p>
+                    <p class="text-marrom/80 leading-relaxed">
+                        Nossa missão é aproximar nossos clientes de procedimentos de alta qualidade, garantindo atendimento humanizado, ambiente acolhedor e diagnósticos transparentes.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-verde/20 text-verde-dark flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-marrom-dark font-medium">Informações organizadas e esclarecimento completo de dúvidas.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-verde/20 text-verde-dark flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-marrom-dark font-medium">Equipamentos modernos e protocolos testados.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-verde/20 text-verde-dark flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-marrom-dark font-medium">Incentivo constante a avaliações espontâneas e reais dos clientes.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços / Procedimentos -->
+    <section id="servicos" class="py-20 bg-bege-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3 py-1 rounded-full bg-verde/10 text-verde-dark text-xs font-semibold uppercase tracking-wider">
+                    Nossos Procedimentos
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-marrom-dark">
+                    Tratamentos Especializados
+                </h2>
+                <p class="text-marrom/70 text-base">
+                    Clique em qualquer serviço para visualizar os detalhes completos do tratamento e realizar seu pré-agendamento.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+                <!-- Cards renderizados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações / Depoimentos -->
+    <section id="avaliacoes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3 py-1 rounded-full bg-bege-200 text-marrom text-xs font-semibold uppercase tracking-wider">
+                    Depoimentos Reais
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-marrom-dark">
+                    O que nossas clientes dizem
+                </h2>
+                <p class="text-marrom/70">
+                    A transparência e a satisfação do cliente são a base da Estética Millano.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Avaliação 1 -->
+                <div class="bg-bege-50 p-8 rounded-3xl border border-bege-200 shadow-sm relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-marrom/80 italic mb-6">
+                            "Adorei o atendimento da Estética Millano! Fiz a limpeza de pele e o resultado foi incrível. As explicações sobre os cuidados pós-procedimento foram супер claras."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-bege-200">
+                        <div class="w-10 h-10 rounded-full bg-verde-soft/30 text-verde-dark font-bold flex items-center justify-center font-serif">
+                            CS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-marrom-dark">Camila Silva</h4>
+                            <span class="text-xs text-marrom/60">Cliente desde 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação 2 -->
+                <div class="bg-bege-50 p-8 rounded-3xl border border-bege-200 shadow-sm relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-marrom/80 italic mb-6">
+                            "O site facilitou muito para tirar minhas dúvidas sobre os preços e procedimentos. A drenagem linfática é maravilhosa e o ambiente é muito relaxante."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-bege-200">
+                        <div class="w-10 h-10 rounded-full bg-verde-soft/30 text-verde-dark font-bold flex items-center justify-center font-serif">
+                            MR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-marrom-dark">Mariana Rocha</h4>
+                            <span class="text-xs text-marrom/60">Cliente Frequente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação 3 -->
+                <div class="bg-bege-50 p-8 rounded-3xl border border-bege-200 shadow-sm relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-marrom/80 italic mb-6">
+                            "Adorei encontrar a clínica na internet com todas as informações bem organizadas. Transmite muita credibilidade e confiança!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-bege-200">
+                        <div class="w-10 h-10 rounded-full bg-verde-soft/30 text-verde-dark font-bold flex items-center justify-center font-serif">
+                            BF
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-marrom-dark">Beatriz Fernandes</h4>
+                            <span class="text-xs text-marrom/60">Nova Cliente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento / Contato -->
+    <section id="agendamento" class="py-20 bg-bege-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Informações de Contato -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-verde/10 text-verde-dark text-xs font-semibold uppercase tracking-wider">
+                            Fale Conosco
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-marrom-dark mt-3">
+                            Agende seu momento de cuidado
+                        </h2>
+                        <p class="text-marrom/70 mt-3 leading-relaxed">
+                            Preencha o formulário para simular seu agendamento ou entre em contato diretamente pelo nosso WhatsApp.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-verde/20 text-verde-dark flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-marrom-dark">Endereço</h4>
+                                <p class="text-sm text-marrom/70">Av. Paulista, 1000 - Sala 42<br/>Bela Vista, São Paulo - SP</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-verde/20 text-verde-dark flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-marrom-dark">Telefone / WhatsApp</h4>
+                                <p class="text-sm text-marrom/70">(11) 99876-5432 / (11) 3344-5566</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-verde/20 text-verde-dark flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-marrom-dark">Horário de Funcionamento</h4>
+                                <p class="text-sm text-marrom/70">Segunda a Sexta: 08:00 às 19:00<br/>Sábados: 08:00 às 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociais -->
+                    <div class="pt-4 border-t border-bege-300">
+                        <h4 class="font-semibold text-sm text-marrom-dark uppercase tracking-wider mb-3">Siga a Estética Millano</h4>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-white text-verde-dark flex items-center justify-center border border-bege-300 hover:bg-verde hover:text-white transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white text-verde-dark flex items-center justify-center border border-bege-300 hover:bg-verde hover:text-white transition-colors">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white text-verde-dark flex items-center justify-center border border-bege-300 hover:bg-verde hover:text-white transition-colors">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de Agendamento Interativo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-bege-200">
+                        <h3 class="font-serif text-2xl font-bold text-marrom-dark mb-2">Simulador de Agendamento</h3>
+                        <p class="text-sm text-marrom/70 mb-6">Escolha o serviço e a data preferida para iniciarmos seu atendimento.</p>
+
+                        <form id="booking-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-marrom mb-2" for="nome">Nome Completo</label>
+                                    <input type="text" id="nome" required placeholder="Digite seu nome" class="w-full px-4 py-3 rounded-xl border border-bege-300 focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent text-sm bg-bege-50/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-marrom mb-2" for="telefone">WhatsApp / Telefone</label>
+                                    <input type="tel" id="telefone" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 rounded-xl border border-bege-300 focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent text-sm bg-bege-50/50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-marrom mb-2" for="servico">Procedimento Desejado</label>
+                                <select id="servico" required class="w-full px-4 py-3 rounded-xl border border-bege-300 focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent text-sm bg-bege-50/50 text-marrom-dark">
+                                    <option value="" disabled selected>Selecione um serviço...</option>
+                                    <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda</option>
+                                    <option value="Drenagem Linfática Corporal">Drenagem Linfática Corporal</option>
+                                    <option value="Rejuvenescimento Facial com Peeling">Rejuvenescimento Facial com Peeling</option>
+                                    <option value="Massagem Relaxante e Terapêutica">Massagem Relaxante e Terapêutica</option>
+                                    <option value="Harmonização Facial Suave">Harmonização Facial Suave</option>
+                                    <option value="Hidratação e Nutrição Facial">Hidratação e Nutrição Facial</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-marrom mb-2" for="data">Data Preferencial</label>
+                                    <input type="date" id="data" required class="w-full px-4 py-3 rounded-xl border border-bege-300 focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent text-sm bg-bege-50/50 text-marrom-dark">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-marrom mb-2" for="hora">Horário Preferencial</label>
+                                    <select id="hora" required class="w-full px-4 py-3 rounded-xl border border-bege-300 focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent text-sm bg-bege-50/50 text-marrom-dark">
+                                        <option value="" disabled selected>Selecione o horário...</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="18:00">18:00</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-marrom mb-2" for="observacoes">Observações ou Dúvidas (Opcional)</label>
+                                <textarea id="observacoes" rows="3" placeholder="Ex: Primeira vez fazendo esse procedimento..." class="w-full px-4 py-3 rounded-xl border border-bege-300 focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent text-sm bg-bege-50/50"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-verde hover:bg-verde-dark text-white font-medium py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center flex items-center justify-center gap-2 text-base">
+                                <i class="fa-solid fa-paper-plane"></i> Enviar Solicitação de Agendamento
+                            </button>
+                        </form>
+
+                        <!-- Feedback Box -->
+                        <div id="booking-success" class="hidden mt-6 p-4 rounded-2xl bg-verde/10 border border-verde/30 text-verde-deep">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-2xl text-verde"></i>
+                                <div>
+                                    <h4 class="font-bold">Solicitação Enviada com Sucesso!</h4>
+                                    <p class="text-xs mt-1" id="success-message-text">Entraremos em contato via WhatsApp para confirmar o seu horário.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-marrom-dark text-bege-100 py-12 border-t border-marrom">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-marrom/60">
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-bege-200 mb-3">Estética Millano</h3>
+                    <p class="text-xs text-bege-300/80 leading-relaxed">
+                        Projeto escolar demonstrativo de Administração e Marketing Digital focado na excelência de atendimento, transparência e valorização do cliente.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-verde-light mb-3">Integrantes do Projeto (1 Z)</h4>
+                    <ul class="text-xs text-bege-300 space-y-1.5">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-user-circle text-verde-soft"></i> Lavinia Manzano</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-user-circle text-verde-soft"></i> Ingrid Helena</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-user-circle text-verde-soft"></i> Ana Laura Ranna</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-verde-light mb-3">IA como Ferramenta de Apoio</h4>
+                    <p class="text-xs text-bege-300/80 leading-relaxed">
+                        Este site e plano administrativo contaram com o apoio de Inteligência Artificial para estruturação técnica, otimização de conteúdo e desenvolvimento em HTML/CSS/JS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-bege-300/60">
+                <p>&copy; 2026 Estética Millano. Projeto acadêmico fictício - Todos os direitos reservados.</p>
+                <p class="mt-2 sm:mt-0">Desenvolvido com HTML5, CSS & JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes do Serviço -->
+    <div id="service-modal" class="fixed inset-0 z-50 hidden bg-marrom-dark/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-bege-200 transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <div class="relative h-48 bg-bege-200">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                <button id="close-modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md text-marrom-dark flex items-center justify-center hover:bg-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <span id="modal-category" class="absolute bottom-4 left-4 px-3 py-1 bg-verde text-white text-xs font-semibold rounded-full uppercase tracking-wider">
+                    Categoria
+                </span>
+            </div>
+            <div class="p-6 space-y-4">
+                <h3 id="modal-title" class="font-serif text-2xl font-bold text-marrom-dark">Título do Serviço</h3>
+                <p id="modal-desc" class="text-sm text-marrom/80 leading-relaxed">Descrição detalhada do procedimento.</p>
+                
+                <div class="bg-bege-50 p-4 rounded-2xl border border-bege-200 space-y-2">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-marrom/70">Duração estimada:</span>
+                        <span id="modal-duration" class="font-semibold text-marrom-dark">60 min</span>
+                    </div>
+                    <div class="flex justify-between text-xs">
+                        <span class="text-marrom/70">Recomendação:</span>
+                        <span id="modal-rec" class="font-semibold text-marrom-dark">Todos os tipos de pele</span>
+                    </div>
+                </div>
+
+                <div class="pt-2 flex gap-3">
+                    <button id="modal-book-btn" class="flex-1 bg-verde hover:bg-verde-dark text-white font-medium py-3 rounded-xl transition-all duration-300 text-center text-sm">
+                        Agendar Este Procedimento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Integrado -->
+    <script>
+        // Dados dos Serviços de Estética Facial e Corporal
+        const services = [
+            {
+                id: 1,
+                title: "Limpeza de Pele Profunda",
+                category: "Facial",
+                shortDesc: "Remoção de impurezas, cravos e células mortas com hidratação intensa.",
+                fullDesc: "Nossa Limpeza de Pele Profunda inclui higienização, esfoliação, vapor de ozônio, extração manual cuidadosa, alta frequência bactericida e máscara finalizadora calmante e hidratante.",
+                duration: "1h 30min",
+                recommendation: "Peles com cravos ou oleosidade excessiva",
+                image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 2,
+                title: "Drenagem Linfática Corporal",
+                category: "Corporal",
+                shortDesc: "Técnica suave de massagem para redução de inchaço e retenção de líquidos.",
+                fullDesc: "A Drenagem Linfática estimula o sistema linfático, auxiliando na eliminação de toxinas, redução de retenção líquida e melhoria da circulação sanguínea, proporcionando sensação imediata de leveza.",
+                duration: "60 min",
+                recommendation: "Pós-operatório, retenção de líquidos e relaxamento",
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 3,
+                title: "Rejuvenescimento Facial",
+                category: "Facial",
+                shortDesc: "Tratamento com peeling suave e ativos renovadores de colágeno.",
+                fullDesc: "Combinação de ativos antioxidantes e peelings superficiais que promovem a renovação celular, suavizam linhas finas de expressão e devolvem o brilho natural e firmeza da pele.",
+                duration: "60 min",
+                recommendation: "Peles maduras ou com sinais de cansaço",
+                image: "https://images.unsplash.com/photo-1512290900673-7002fe5dc899?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 4,
+                title: "Massagem Relaxante",
+                category: "Corporal",
+                shortDesc: "Alívio de tensões musculares e estresse com óleos essenciais aromáticos.",
+                fullDesc: "Massagem de deslizamento suave e profundo que atua no alívio das dores musculares, combate o estresse do dia a dia e promove um estado profundo de bem-estar corporal e mental.",
+                duration: "50 min",
+                recommendation: "Alívio de estresse e tensão muscular",
+                image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 5,
+                title: "Harmonização Facial Suave",
+                category: "Facial",
+                shortDesc: "Procedimentos estéticos sutis para realçar o contorno natural do rosto.",
+                fullDesc: "Avaliação completa e aplicação de técnicas estéticas preventivas não invasivas para realçar os traços naturais, melhorar a simetria e valorizar a beleza individual.",
+                duration: "1h 15min",
+                recommendation: "Realce natural sem exagero",
+                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 6,
+                title: "Hidratação & Nutrição Facial",
+                category: "Facial",
+                shortDesc: "Reposição de água e nutrientes vitais para devolver a maciez e o viço.",
+                fullDesc: "Tratamento focado na restauração da barreira cutânea através de máscaras de ácido hialurônico e vitaminas, restaurando o toque aveludado da pele ressecada.",
+                duration: "45 min",
+                recommendation: "Peles secas ou desidratadas",
+                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        // Renderizar Cards de Serviços
+        function renderServices() {
+            const container = document.getElementById('services-grid');
+            container.innerHTML = services.map(service => `
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md border border-bege-200 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-bege-200">
+                            <img src="${service.image}" alt="${service.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/E8DFD1/2C6B69?text=${encodeURIComponent(service.title)}';">
+                            <span class="absolute top-4 left-4 bg-bege-100/90 backdrop-blur-md text-verde-dark text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                                ${service.category}
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-marrom-dark mb-2">${service.title}</h3>
+                            <p class="text-sm text-marrom/70 leading-relaxed">${service.shortDesc}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0">
+                        <button onclick="openModal(${service.id})" class="w-full bg-bege-100 hover:bg-verde hover:text-white text-verde-dark font-medium py-3 rounded-xl transition-all duration-300 text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Lógica do Modal
+        const modal = document.getElementById('service-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        function openModal(id) {
+            const service = services.find(s => s.id === id);
+            if (!service) return;
+
+            document.getElementById('modal-img').src = service.image;
+            document.getElementById('modal-category').innerText = service.category;
+            document.getElementById('modal-title').innerText = service.title;
+            document.getElementById('modal-desc').innerText = service.fullDesc;
+            document.getElementById('modal-duration').innerText = service.duration;
+            document.getElementById('modal-rec').innerText = service.recommendation;
+
+            document.getElementById('modal-book-btn').onclick = function() {
+                closeModal();
+                const select = document.getElementById('servico');
+                select.value = service.title;
+                document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Formulário de Agendamento Interativo
+        const bookingForm = document.getElementById('booking-form');
+        const successBox = document.getElementById('booking-success');
+        const successText = document.getElementById('success-message-text');
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+
+            // Formatação amigável da data
+            const dataFormatada = data.split('-').reverse().join('/');
+
+            successText.innerText = `Obrigado(a), ${nome}! Recebemos a pré-solicitação para o procedimento "${servico}" no dia ${dataFormatada} às ${hora}. Entraremos em contato via WhatsApp para confirmação final.`;
+
+            successBox.classList.remove('hidden');
+            bookingForm.reset();
+
+            // Smooth scroll até o feedback
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Inicialização
+        window.onload = function() {
+            renderServices();
+            
+            // Definir data mínima do input como hoje
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('data').setAttribute('min', today);
+        };
+    </script>
+</body>
+</html>
